@@ -27,7 +27,7 @@ class Course(BaseModel):
 class Lesson(BaseModel):
     subject = models.CharField(max_length=255)
     content = models.TextField()
-    image = models.ImageField(upload_to='application/%Y/%m')
+    image = models.ImageField(upload_to='application/%Y/%m', null=True)
     course_id = models.ForeignKey(Course, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
 
